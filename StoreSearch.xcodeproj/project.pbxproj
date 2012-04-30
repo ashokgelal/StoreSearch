@@ -15,6 +15,7 @@
 		CDAD47C9154E6E35006C7DAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47C8154E6E35006C7DAC /* AppDelegate.m */; };
 		CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47CB154E6E35006C7DAC /* SearchViewController.m */; };
 		CDAD47CF154E6E35006C7DAC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */; };
+		CDAD47DF154E77B0006C7DAC /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47DE154E77B0006C7DAC /* SearchResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +29,11 @@
 		CDAD47C6154E6E35006C7DAC /* StoreSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreSearch-Prefix.pch"; sourceTree = "<group>"; };
 		CDAD47C7154E6E35006C7DAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDAD47C8154E6E35006C7DAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CDAD47CA154E6E35006C7DAC /* SearchViewController.h */ = {isa = PBXFileReference; path = SearchViewController.h; sourceTree = "<group>"; };
+		CDAD47CA154E6E35006C7DAC /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		CDAD47CB154E6E35006C7DAC /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		CDAD47CE154E6E35006C7DAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SearchViewController.xib; sourceTree = "<group>"; };
+		CDAD47DD154E77B0006C7DAC /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
+		CDAD47DE154E77B0006C7DAC /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				CDAD47CB154E6E35006C7DAC /* SearchViewController.m */,
 				CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */,
 				CDAD47BF154E6E35006C7DAC /* Supporting Files */,
+				CDAD47DD154E77B0006C7DAC /* SearchResult.h */,
+				CDAD47DE154E77B0006C7DAC /* SearchResult.m */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				CDAD47C5154E6E35006C7DAC /* main.m in Sources */,
 				CDAD47C9154E6E35006C7DAC /* AppDelegate.m in Sources */,
 				CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */,
+				CDAD47DF154E77B0006C7DAC /* SearchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
