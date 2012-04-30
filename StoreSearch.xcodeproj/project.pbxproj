@@ -13,8 +13,8 @@
 		CDAD47C3154E6E35006C7DAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDAD47C1154E6E35006C7DAC /* InfoPlist.strings */; };
 		CDAD47C5154E6E35006C7DAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47C4154E6E35006C7DAC /* main.m */; };
 		CDAD47C9154E6E35006C7DAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47C8154E6E35006C7DAC /* AppDelegate.m */; };
-		CDAD47CC154E6E35006C7DAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47CB154E6E35006C7DAC /* ViewController.m */; };
-		CDAD47CF154E6E35006C7DAC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD47CD154E6E35006C7DAC /* ViewController.xib */; };
+		CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47CB154E6E35006C7DAC /* SearchViewController.m */; };
+		CDAD47CF154E6E35006C7DAC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +22,15 @@
 		CDAD47B8154E6E35006C7DAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDAD47BA154E6E35006C7DAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDAD47BC154E6E35006C7DAC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CDAD47C0154E6E35006C7DAC /* StoreSearch-Info.plist */ = {isa = PBXFileReference; path = "StoreSearch-Info.plist"; sourceTree = "<group>"; };
+		CDAD47C0154E6E35006C7DAC /* StoreSearch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreSearch-Info.plist"; sourceTree = "<group>"; };
 		CDAD47C2154E6E35006C7DAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDAD47C4154E6E35006C7DAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CDAD47C6154E6E35006C7DAC /* StoreSearch-Prefix.pch */ = {isa = PBXFileReference; path = "StoreSearch-Prefix.pch"; sourceTree = "<group>"; };
-		CDAD47C7154E6E35006C7DAC /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDAD47C6154E6E35006C7DAC /* StoreSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreSearch-Prefix.pch"; sourceTree = "<group>"; };
+		CDAD47C7154E6E35006C7DAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDAD47C8154E6E35006C7DAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CDAD47CA154E6E35006C7DAC /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		CDAD47CB154E6E35006C7DAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CDAD47CE154E6E35006C7DAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		CDAD47CA154E6E35006C7DAC /* SearchViewController.h */ = {isa = PBXFileReference; path = SearchViewController.h; sourceTree = "<group>"; };
+		CDAD47CB154E6E35006C7DAC /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		CDAD47CE154E6E35006C7DAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +79,9 @@
 			children = (
 				CDAD47C7154E6E35006C7DAC /* AppDelegate.h */,
 				CDAD47C8154E6E35006C7DAC /* AppDelegate.m */,
-				CDAD47CA154E6E35006C7DAC /* ViewController.h */,
-				CDAD47CB154E6E35006C7DAC /* ViewController.m */,
-				CDAD47CD154E6E35006C7DAC /* ViewController.xib */,
+				CDAD47CA154E6E35006C7DAC /* SearchViewController.h */,
+				CDAD47CB154E6E35006C7DAC /* SearchViewController.m */,
+				CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */,
 				CDAD47BF154E6E35006C7DAC /* Supporting Files */,
 			);
 			path = StoreSearch;
@@ -149,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAD47C3154E6E35006C7DAC /* InfoPlist.strings in Resources */,
-				CDAD47CF154E6E35006C7DAC /* ViewController.xib in Resources */,
+				CDAD47CF154E6E35006C7DAC /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			files = (
 				CDAD47C5154E6E35006C7DAC /* main.m in Sources */,
 				CDAD47C9154E6E35006C7DAC /* AppDelegate.m in Sources */,
-				CDAD47CC154E6E35006C7DAC /* ViewController.m in Sources */,
+				CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,12 +177,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		CDAD47CD154E6E35006C7DAC /* ViewController.xib */ = {
+		CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CDAD47CE154E6E35006C7DAC /* en */,
 			);
-			name = ViewController.xib;
+			name = SearchViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -274,6 +274,7 @@
 				CDAD47D4154E6E35006C7DAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
