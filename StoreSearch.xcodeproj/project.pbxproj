@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD028CDF154FC0A1003A663A /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD028CDE154FC0A1003A663A /* NothingFoundCell.xib */; };
 		CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47B8154E6E35006C7DAC /* UIKit.framework */; };
 		CDAD47BB154E6E35006C7DAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47BA154E6E35006C7DAC /* Foundation.framework */; };
 		CDAD47BD154E6E35006C7DAC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47BC154E6E35006C7DAC /* CoreGraphics.framework */; };
@@ -16,9 +17,27 @@
 		CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47CB154E6E35006C7DAC /* SearchViewController.m */; };
 		CDAD47CF154E6E35006C7DAC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD47CD154E6E35006C7DAC /* SearchViewController.xib */; };
 		CDAD47DF154E77B0006C7DAC /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD47DE154E77B0006C7DAC /* SearchResult.m */; };
+		CDAD480F154E7B5D006C7DAC /* BarTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4800154E7B5D006C7DAC /* BarTexture.png */; };
+		CDAD4810154E7B5D006C7DAC /* BarTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4801154E7B5D006C7DAC /* BarTexture@2x.png */; };
+		CDAD4811154E7B5D006C7DAC /* CloseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4802154E7B5D006C7DAC /* CloseButton.png */; };
+		CDAD4812154E7B5D006C7DAC /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4803154E7B5D006C7DAC /* CloseButton@2x.png */; };
+		CDAD4813154E7B5D006C7DAC /* DetailPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4804154E7B5D006C7DAC /* DetailPlaceholder.png */; };
+		CDAD4814154E7B5D006C7DAC /* DetailPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4805154E7B5D006C7DAC /* DetailPlaceholder@2x.png */; };
+		CDAD4815154E7B5D006C7DAC /* LandscapeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4806154E7B5D006C7DAC /* LandscapeBackground.png */; };
+		CDAD4816154E7B5D006C7DAC /* LandscapeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4807154E7B5D006C7DAC /* LandscapeButton.png */; };
+		CDAD4817154E7B5D006C7DAC /* LandscapeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4808154E7B5D006C7DAC /* LandscapeButton@2x.png */; };
+		CDAD4818154E7B5D006C7DAC /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD4809154E7B5D006C7DAC /* Placeholder.png */; };
+		CDAD4819154E7B5D006C7DAC /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480A154E7B5D006C7DAC /* Placeholder@2x.png */; };
+		CDAD481A154E7B5D006C7DAC /* SelectedTableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480B154E7B5D006C7DAC /* SelectedTableCellGradient.png */; };
+		CDAD481B154E7B5D006C7DAC /* StoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480C154E7B5D006C7DAC /* StoreButton.png */; };
+		CDAD481C154E7B5D006C7DAC /* StoreButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480D154E7B5D006C7DAC /* StoreButton@2x.png */; };
+		CDAD481D154E7B5D006C7DAC /* TableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480E154E7B5D006C7DAC /* TableCellGradient.png */; };
+		CDAD481F154E7B87006C7DAC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */; };
+		CDAD4822154E809D006C7DAC /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD4821154E809D006C7DAC /* SearchResultCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD028CDE154FC0A1003A663A /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		CDAD47B4154E6E35006C7DAC /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAD47B8154E6E35006C7DAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDAD47BA154E6E35006C7DAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,6 +53,24 @@
 		CDAD47CE154E6E35006C7DAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SearchViewController.xib; sourceTree = "<group>"; };
 		CDAD47DD154E77B0006C7DAC /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		CDAD47DE154E77B0006C7DAC /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
+		CDAD4800154E7B5D006C7DAC /* BarTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarTexture.png; sourceTree = "<group>"; };
+		CDAD4801154E7B5D006C7DAC /* BarTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BarTexture@2x.png"; sourceTree = "<group>"; };
+		CDAD4802154E7B5D006C7DAC /* CloseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseButton.png; sourceTree = "<group>"; };
+		CDAD4803154E7B5D006C7DAC /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
+		CDAD4804154E7B5D006C7DAC /* DetailPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DetailPlaceholder.png; sourceTree = "<group>"; };
+		CDAD4805154E7B5D006C7DAC /* DetailPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DetailPlaceholder@2x.png"; sourceTree = "<group>"; };
+		CDAD4806154E7B5D006C7DAC /* LandscapeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LandscapeBackground.png; sourceTree = "<group>"; };
+		CDAD4807154E7B5D006C7DAC /* LandscapeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LandscapeButton.png; sourceTree = "<group>"; };
+		CDAD4808154E7B5D006C7DAC /* LandscapeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LandscapeButton@2x.png"; sourceTree = "<group>"; };
+		CDAD4809154E7B5D006C7DAC /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		CDAD480A154E7B5D006C7DAC /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
+		CDAD480B154E7B5D006C7DAC /* SelectedTableCellGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedTableCellGradient.png; sourceTree = "<group>"; };
+		CDAD480C154E7B5D006C7DAC /* StoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoreButton.png; sourceTree = "<group>"; };
+		CDAD480D154E7B5D006C7DAC /* StoreButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StoreButton@2x.png"; sourceTree = "<group>"; };
+		CDAD480E154E7B5D006C7DAC /* TableCellGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient.png; sourceTree = "<group>"; };
+		CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		CDAD4820154E809D006C7DAC /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		CDAD4821154E809D006C7DAC /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +90,7 @@
 		CDAD47A9154E6E35006C7DAC = {
 			isa = PBXGroup;
 			children = (
+				CDAD47FF154E7B5D006C7DAC /* Images */,
 				CDAD47BE154E6E35006C7DAC /* StoreSearch */,
 				CDAD47B7154E6E35006C7DAC /* Frameworks */,
 				CDAD47B5154E6E35006C7DAC /* Products */,
@@ -88,6 +126,10 @@
 				CDAD47BF154E6E35006C7DAC /* Supporting Files */,
 				CDAD47DD154E77B0006C7DAC /* SearchResult.h */,
 				CDAD47DE154E77B0006C7DAC /* SearchResult.m */,
+				CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */,
+				CDAD4820154E809D006C7DAC /* SearchResultCell.h */,
+				CDAD4821154E809D006C7DAC /* SearchResultCell.m */,
+				CD028CDE154FC0A1003A663A /* NothingFoundCell.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -101,6 +143,28 @@
 				CDAD47C6154E6E35006C7DAC /* StoreSearch-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDAD47FF154E7B5D006C7DAC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CDAD4800154E7B5D006C7DAC /* BarTexture.png */,
+				CDAD4801154E7B5D006C7DAC /* BarTexture@2x.png */,
+				CDAD4802154E7B5D006C7DAC /* CloseButton.png */,
+				CDAD4803154E7B5D006C7DAC /* CloseButton@2x.png */,
+				CDAD4804154E7B5D006C7DAC /* DetailPlaceholder.png */,
+				CDAD4805154E7B5D006C7DAC /* DetailPlaceholder@2x.png */,
+				CDAD4806154E7B5D006C7DAC /* LandscapeBackground.png */,
+				CDAD4807154E7B5D006C7DAC /* LandscapeButton.png */,
+				CDAD4808154E7B5D006C7DAC /* LandscapeButton@2x.png */,
+				CDAD4809154E7B5D006C7DAC /* Placeholder.png */,
+				CDAD480A154E7B5D006C7DAC /* Placeholder@2x.png */,
+				CDAD480B154E7B5D006C7DAC /* SelectedTableCellGradient.png */,
+				CDAD480C154E7B5D006C7DAC /* StoreButton.png */,
+				CDAD480D154E7B5D006C7DAC /* StoreButton@2x.png */,
+				CDAD480E154E7B5D006C7DAC /* TableCellGradient.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +219,23 @@
 			files = (
 				CDAD47C3154E6E35006C7DAC /* InfoPlist.strings in Resources */,
 				CDAD47CF154E6E35006C7DAC /* SearchViewController.xib in Resources */,
+				CDAD480F154E7B5D006C7DAC /* BarTexture.png in Resources */,
+				CDAD4810154E7B5D006C7DAC /* BarTexture@2x.png in Resources */,
+				CDAD4811154E7B5D006C7DAC /* CloseButton.png in Resources */,
+				CDAD4812154E7B5D006C7DAC /* CloseButton@2x.png in Resources */,
+				CDAD4813154E7B5D006C7DAC /* DetailPlaceholder.png in Resources */,
+				CDAD4814154E7B5D006C7DAC /* DetailPlaceholder@2x.png in Resources */,
+				CDAD4815154E7B5D006C7DAC /* LandscapeBackground.png in Resources */,
+				CDAD4816154E7B5D006C7DAC /* LandscapeButton.png in Resources */,
+				CDAD4817154E7B5D006C7DAC /* LandscapeButton@2x.png in Resources */,
+				CDAD4818154E7B5D006C7DAC /* Placeholder.png in Resources */,
+				CDAD4819154E7B5D006C7DAC /* Placeholder@2x.png in Resources */,
+				CDAD481A154E7B5D006C7DAC /* SelectedTableCellGradient.png in Resources */,
+				CDAD481B154E7B5D006C7DAC /* StoreButton.png in Resources */,
+				CDAD481C154E7B5D006C7DAC /* StoreButton@2x.png in Resources */,
+				CDAD481D154E7B5D006C7DAC /* TableCellGradient.png in Resources */,
+				CDAD481F154E7B87006C7DAC /* SearchResultCell.xib in Resources */,
+				CD028CDF154FC0A1003A663A /* NothingFoundCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +250,7 @@
 				CDAD47C9154E6E35006C7DAC /* AppDelegate.m in Sources */,
 				CDAD47CC154E6E35006C7DAC /* SearchViewController.m in Sources */,
 				CDAD47DF154E77B0006C7DAC /* SearchResult.m in Sources */,
+				CDAD4822154E809D006C7DAC /* SearchResultCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
