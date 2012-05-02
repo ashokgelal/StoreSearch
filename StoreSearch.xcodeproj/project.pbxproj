@@ -41,6 +41,7 @@
 		CDAD481D154E7B5D006C7DAC /* TableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480E154E7B5D006C7DAC /* TableCellGradient.png */; };
 		CDAD481F154E7B87006C7DAC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */; };
 		CDAD4822154E809D006C7DAC /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD4821154E809D006C7DAC /* SearchResultCell.m */; };
+		CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF84BE215511BB200071471 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		CDAD4820154E809D006C7DAC /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		CDAD4821154E809D006C7DAC /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		CDF84BE215511BB200071471 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				CDAD4820154E809D006C7DAC /* SearchResultCell.h */,
 				CDAD4821154E809D006C7DAC /* SearchResultCell.m */,
 				CD028CDE154FC0A1003A663A /* NothingFoundCell.xib */,
+				CDF84BE215511BB200071471 /* LoadingCell.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				CD028CED154FC361003A663A /* Icon.png in Resources */,
 				CD028CEE154FC361003A663A /* Icon@2x.png in Resources */,
 				CD028CEF154FC361003A663A /* iTunesArtwork in Resources */,
+				CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
