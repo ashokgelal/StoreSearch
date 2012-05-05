@@ -54,6 +54,8 @@
 		CDF84C051551219F00071471 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BFB1551219F00071471 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CDFA0D041555BF7000756A55 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFA0D021555BF7000756A55 /* Default.png */; };
 		CDFA0D051555BF7000756A55 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFA0D031555BF7000756A55 /* Default@2x.png */; };
+		CDFA0D121555CD9600756A55 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFA0D101555CD9600756A55 /* DetailViewController.m */; };
+		CDFA0D131555CD9600756A55 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFA0D111555CD9600756A55 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +125,9 @@
 		CDF84BFB1551219F00071471 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		CDFA0D021555BF7000756A55 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CDFA0D031555BF7000756A55 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CDFA0D0F1555CD9600756A55 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CDFA0D101555CD9600756A55 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CDFA0D111555CD9600756A55 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +205,9 @@
 				CDAD4821154E809D006C7DAC /* SearchResultCell.m */,
 				CD028CDE154FC0A1003A663A /* NothingFoundCell.xib */,
 				CDF84BE215511BB200071471 /* LoadingCell.xib */,
+				CDFA0D0F1555CD9600756A55 /* DetailViewController.h */,
+				CDFA0D101555CD9600756A55 /* DetailViewController.m */,
+				CDFA0D111555CD9600756A55 /* DetailViewController.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 				CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */,
 				CDFA0D041555BF7000756A55 /* Default.png in Resources */,
 				CDFA0D051555BF7000756A55 /* Default@2x.png in Resources */,
+				CDFA0D131555CD9600756A55 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +388,7 @@
 				CDF84C031551219F00071471 /* AFURLConnectionOperation.m in Sources */,
 				CDF84C041551219F00071471 /* AFXMLRequestOperation.m in Sources */,
 				CDF84C051551219F00071471 /* UIImageView+AFNetworking.m in Sources */,
+				CDFA0D121555CD9600756A55 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
