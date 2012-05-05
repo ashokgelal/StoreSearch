@@ -19,6 +19,10 @@
 {
     UIImage *barImage = [UIImage imageNamed:@"BarTexture"];
     [[UISearchBar appearance] setBackgroundImage:barImage];
+    [[UINavigationBar appearance] setBackgroundImage:barImage forBarMetrics:UIBarMetricsDefault];
+    
+    UIColor *tintColor = [UIColor colorWithRed:40/255.0f green:50/255.0f blue:50/255.0f alpha:1.0f];
+    [[UISegmentedControl appearance] setTintColor:tintColor];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

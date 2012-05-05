@@ -52,6 +52,8 @@
 		CDF84C031551219F00071471 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BF71551219F00071471 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CDF84C041551219F00071471 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BF91551219F00071471 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc  -Wno-unused"; }; };
 		CDF84C051551219F00071471 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BFB1551219F00071471 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CDFA0D041555BF7000756A55 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFA0D021555BF7000756A55 /* Default.png */; };
+		CDFA0D051555BF7000756A55 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFA0D031555BF7000756A55 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,8 @@
 		CDF84BF91551219F00071471 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		CDF84BFA1551219F00071471 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		CDF84BFB1551219F00071471 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		CDFA0D021555BF7000756A55 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CDFA0D031555BF7000756A55 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		CDAD47A9154E6E35006C7DAC = {
 			isa = PBXGroup;
 			children = (
+				CDFA0D011555BF7000756A55 /* Launch Images */,
 				CDF84BE51551219F00071471 /* AFNetworking */,
 				CD028CE1154FC361003A663A /* Icon */,
 				CDAD47FF154E7B5D006C7DAC /* Images */,
@@ -261,6 +266,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		CDFA0D011555BF7000756A55 /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				CDFA0D021555BF7000756A55 /* Default.png */,
+				CDFA0D031555BF7000756A55 /* Default@2x.png */,
+			);
+			path = "Launch Images";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +352,8 @@
 				CD028CEE154FC361003A663A /* Icon@2x.png in Resources */,
 				CD028CEF154FC361003A663A /* iTunesArtwork in Resources */,
 				CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */,
+				CDFA0D041555BF7000756A55 /* Default.png in Resources */,
+				CDFA0D051555BF7000756A55 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

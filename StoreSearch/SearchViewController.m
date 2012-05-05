@@ -2,6 +2,7 @@
 #import "SearchResult.h"
 #import "SearchResultCell.h"
 #import "AFJSONRequestOperation.h"
+#import "AFImageCache.h"
 
 static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
 static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
@@ -10,6 +11,8 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 @interface SearchViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)segmentChanged:(UISegmentedControl *)sender;
 
 @end
 
@@ -21,6 +24,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
+@synthesize segmentedControl = _segmentedControl;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,6 +57,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 {
     [self setSearchBar:nil];
     [self setTableView:nil];
+    [self setSegmentedControl:nil];
     [super viewDidUnload];
 }
 
@@ -77,32 +82,6 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     }
 }
 
--(NSString *)kindForDisplay:(NSString *)kind
-{
-    if([kind isEqualToString:@"album"]){
-        return @"Album";
-    }else if ([kind isEqualToString:@"audiobook"]) {
-        return @"Audiobook";
-    }else if ([kind isEqualToString:@"book"]) {
-        return @"Book";
-    }else if ([kind isEqualToString:@"ebook"]) {
-        return @"E-Book";
-    }else if ([kind isEqualToString:@"feature-movie"]) {
-        return @"Movie";
-    }else if ([kind isEqualToString:@"music-video"]) {
-        return @"Music Video";
-    }else if ([kind isEqualToString:@"podcast"]) {
-        return @"Podcast";
-    }else if ([kind isEqualToString:@"software"]) {
-        return @"App";
-    }else if ([kind isEqualToString:@"song"]) {
-        return @"Song";
-    }else if ([kind isEqualToString:@"tv-episode"]) {
-        return @"TV Episode";
-    }else{
-        return kind;
-    }
-}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -115,26 +94,25 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
         
         SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
-        cell.nameLabel.text = searchResult.name;
+        [cell configureForSearchResult:searchResult];
         
-        
-        NSString *artistName = searchResult.artistName;
-        if(artistName == nil){
-            artistName = @"Unknown";
-        }
-        
-        NSString *kind = [self kindForDisplay: searchResult.kind];
-        cell.artistNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", artistName, kind];
         return cell;
     }
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    if([searchBar.text length] > 0){
-        [searchBar resignFirstResponder];
+    [self performSearch];
+}
+
+-(void)performSearch
+{
+    if([self.searchBar.text length] > 0){
+        [self.searchBar resignFirstResponder];
         
         [queue cancelAllOperations];
+        [[AFImageCache sharedImageCache] removeAllObjects];
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
         
         isLoading  = YES;
         [self.tableView reloadData];
@@ -142,7 +120,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         
         searchResults = [NSMutableArray arrayWithCapacity:100];
         
-        NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSURL *url = [self urlWithSearchText:self.searchBar.text category:self.segmentedControl.selectedSegmentIndex];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
@@ -259,10 +237,18 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     return searchResult;
 }
 
--(NSURL *)urlWithSearchText:(NSString *)searchText
+-(NSURL *)urlWithSearchText:(NSString *)searchText category:(NSInteger)category
 {
+    NSString *categoryName;
+    switch (category) {
+        case 0: categoryName = @""; break;
+        case 1: categoryName = @"musicTrack"; break;             
+        case 2: categoryName = @"software"; break;             
+        case 3: categoryName = @"ebook"; break;             
+    }
+    
     NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@&limit=200", escapedSearchText];
+    NSString *urlString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText, categoryName];
     
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
@@ -287,6 +273,12 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         return nil;
     }else {
         return indexPath;
+    }
+}
+
+- (IBAction)segmentChanged:(UISegmentedControl *)sender {
+    if(searchResults != nil){
+        [self performSearch];
     }
 }
 
