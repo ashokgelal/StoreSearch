@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *storeButton;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (nonatomic, strong) UIPopoverController *masterPopoverController;
+
 - (IBAction)openInStore:(id)sender;
 -(IBAction)close:(id)sender;
 @end
@@ -32,6 +34,7 @@
 @synthesize closeButton = _closeButton;
 
 @synthesize searchResult = _searchResult;
+@synthesize masterPopoverController = _masterPopoverController;
 
 -(void)dealloc
 {
@@ -49,23 +52,16 @@
     self.backgroundView.layer.borderWidth = 3.0f;
     self.backgroundView.layer.cornerRadius = 10.0f;
     
-    self.nameLabel.text = self.searchResult.name;
-    
-    NSString *artistName = self.searchResult.artistName;
-    if(artistName == nil){
-        artistName = NSLocalizedString(@"Unknown", @"Unknown");
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
+        self.closeButton.hidden = YES;
+        self.backgroundView.hidden = (self.searchResult == nil);
+        self.title = [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:@"CFBundleDisplayName"];
     }
     
-    self.artistNameLabel.text = artistName;
-    self.kindLabel.text = [self.searchResult kindForDisplay];
-    self.genreLabel.text = self.searchResult.genre;
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    [formatter setCurrencyCode:self.searchResult.currency];
-    self.priceLabel.text = [formatter stringFromNumber:self.searchResult.price];
-    
-    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"DetailPlaceholder"]];
+    if(self.searchResult != nil){
+        [self updateUI];
+    }
 }
 
 - (void)viewDidUnload
@@ -176,5 +172,57 @@
 {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self layoutForInterfaceOrientation:toInterfaceOrientation];
+}
+
+
+#pragma mark - UISplitViewControllerDelegate
+-(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = NSLocalizedString(@"Search", @"Split-view master button");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = pc;
+}
+
+-(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
+-(void)setSearchResult:(SearchResult *)newSearchResult
+{
+    if(_searchResult != newSearchResult){
+        _searchResult = newSearchResult;
+        
+        if([self isViewLoaded]){
+            [self updateUI];
+        }
+    }
+}
+
+-(void)updateUI
+{
+    self.nameLabel.text = self.searchResult.name;
+    
+    NSString *artistName = self.searchResult.artistName;
+    if(artistName == nil){
+        artistName = NSLocalizedString(@"Unknown", @"Unknown artist name");
+    }
+    self.artistNameLabel.text = artistName;
+    self.kindLabel.text = [self.searchResult kindForDisplay];
+    self.genreLabel.text = self.searchResult.genre;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setCurrencyCode:self.searchResult.currency];
+    self.priceLabel.text = [formatter stringFromNumber:self.searchResult.price];
+    
+    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"DetailPlaceholder"]];
+    
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.backgroundView.hidden = NO;
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
 }
 @end

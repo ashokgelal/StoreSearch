@@ -21,12 +21,12 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 @implementation SearchViewController{
     LandscapeViewController *landscapeViewController;
     Search *search;
-    __weak DetailViewController *detailViewController;
 }
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
 @synthesize segmentedControl = _segmentedControl;
+@synthesize detailViewController = _detailViewController;
 
 - (void)viewDidLoad
 {
@@ -43,7 +43,9 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     
     self.tableView.rowHeight = 80;
     
-    [self.searchBar becomeFirstResponder];
+    if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
+        [self.searchBar becomeFirstResponder];
+    }
 }
 
 - (void)viewDidUnload
@@ -131,14 +133,20 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.searchBar resignFirstResponder];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    DetailViewController *controller = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    
     SearchResult *searchResult = [search.searchResults objectAtIndex:indexPath.row];
-    controller.searchResult = searchResult;
     
-    [controller presentInParentViewController:self];
-    detailViewController = controller;
+    if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        DetailViewController *controller = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        controller.searchResult = searchResult;
+        
+        [controller presentInParentViewController:self];
+        self.detailViewController = controller;
+    }
+    else{
+        self.detailViewController.searchResult = searchResult;
+    }
+    
 }
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,11 +168,13 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
-    if(UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
-        [self hideLandscapeViewWithDuration:duration];
-    }
-    else {
-        [self showLandscapeViewWithDuration:duration];
+    if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
+        if(UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
+            [self hideLandscapeViewWithDuration:duration];
+        }
+        else {
+            [self showLandscapeViewWithDuration:duration];
+        }
     }
 }
 -(void) hideLandscapeViewWithDuration:(NSTimeInterval)duration
@@ -204,7 +214,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
         
         [self.searchBar resignFirstResponder];
-        [detailViewController dismissFromParentViewControllerWithAnimationType:DetailViewControllerAnimationTypeFade];
+        [self.detailViewController dismissFromParentViewControllerWithAnimationType:DetailViewControllerAnimationTypeFade];
     }
 }
 

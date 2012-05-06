@@ -1,19 +1,13 @@
-//
-//  AppDelegate.m
-//  StoreSearch
-//
-//  Created by Ashok Gelal on 4/30/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 #import "SearchViewController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize splitViewController = _splitViewController;
 
 -(void)customizeAppearance
 {
@@ -23,15 +17,34 @@
     
     UIColor *tintColor = [UIColor colorWithRed:40/255.0f green:50/255.0f blue:50/255.0f alpha:1.0f];
     [[UISegmentedControl appearance] setTintColor:tintColor];
+    
+    [[UIBarButtonItem appearance] setTintColor:tintColor];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,
+                                                          [UIColor colorWithWhite:0.0f alpha:0.5f], UITextAttributeTextShadowColor, nil]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self customizeAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.viewController = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+        self.splitViewController = [[UISplitViewController alloc] init];
+        
+        DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        
+        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+        
+        self.splitViewController.delegate = detailViewController;
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.viewController, detailNavigationController, nil];
+        self.window.rootViewController = self.splitViewController;
+        self.viewController.detailViewController = detailViewController;
+    }
+    else{
+        self.window.rootViewController = self.viewController;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }

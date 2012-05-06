@@ -7,7 +7,7 @@ typedef enum
     DetailViewControllerAnimationTypeFade
 }DetailViewControllerAnimationType;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 @property (strong, nonatomic) SearchResult *searchResult;
 
 
