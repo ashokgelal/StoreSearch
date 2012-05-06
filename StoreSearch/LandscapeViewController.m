@@ -1,5 +1,6 @@
 #import "LandscapeViewController.h"
 #import "SearchResult.h"
+#import "AFImageCache.h"
 
 @interface LandscapeViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -9,7 +10,10 @@
 
 @end
 
-@implementation LandscapeViewController
+@implementation LandscapeViewController {
+    NSOperationQueue *imageRequestOperationQueue;
+}
+
 @synthesize scrollView = _scrollView;
 @synthesize pageControl = _pageControl;
 @synthesize searchResults = _searchResults;
@@ -18,7 +22,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        imageRequestOperationQueue = [[NSOperationQueue alloc] init];
+        [imageRequestOperationQueue setMaxConcurrentOperationCount:8];
     }
     return self;
 }
@@ -28,8 +33,29 @@
     [super viewDidLoad];
     
     self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
-    //self.scrollView.contentSize = CGSizeMake(1000, self.scrollView.bounds.size.height);
     [self tileButtons];
+}
+
+-(void)downloadImageForSearchResult:(SearchResult *)searchResult andPlaceOnButton:(UIButton *)button
+{
+    NSURL *url = [NSURL URLWithString:searchResult.artworkURL60];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    [urlRequest setHTTPShouldHandleCookies:NO];
+    [urlRequest setHTTPShouldUsePipelining:YES];
+    
+    UIImage *cachedImage = [[AFImageCache sharedImageCache] cachedImageForURL:[urlRequest URL] cacheName:nil];
+    if(cachedImage !=nil){
+        [button setImage:cachedImage forState:UIControlStateNormal];
+    }else {
+        AFImageRequestOperation *requestOperation = [[AFImageRequestOperation alloc] initWithRequest:urlRequest];
+        [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [button setImage:responseObject forState:UIControlStateNormal];
+            [[AFImageCache sharedImageCache] cacheImageData:operation.responseData forURL:[urlRequest URL] cacheName:nil];
+        } failure:nil];
+        
+        [imageRequestOperationQueue addOperation:requestOperation];
+    }
+                
 }
 
 -(void)tileButtons
@@ -46,10 +72,11 @@
     int column = 0;
     
     for (SearchResult *searchResult in self.searchResults) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(column*itemWidth + marginHorz, row*itemHeight + marginVert, buttonWidth, buttonHeight);
-        [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"LandscapeButton"] forState:UIControlStateNormal];
         [self.scrollView addSubview:button];
+        [self downloadImageForSearchResult:searchResult andPlaceOnButton:button];
         index++;
         row++;
         if(row == 3){
@@ -79,6 +106,7 @@
 -(void)dealloc
 {
     NSLog(@"dealloc %@", nil);
+    [imageRequestOperationQueue cancelAllOperations];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)theScrollView
