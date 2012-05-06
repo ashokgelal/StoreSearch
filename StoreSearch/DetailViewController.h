@@ -1,13 +1,11 @@
-//
-//  DetailViewController.h
-//  StoreSearch
-//
-//  Created by Ashok Gelal on 5/5/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import "SearchResult.h"
 
 @interface DetailViewController : UIViewController
+@property (strong, nonatomic) SearchResult *searchResult;
+
+
+-(void)presentInParentViewController:(UIViewController *)parentViewController;
+-(void)dismissFromParentViewController;
 
 @end

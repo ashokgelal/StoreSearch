@@ -15,6 +15,7 @@
 		CD028CED154FC361003A663A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE6154FC361003A663A /* Icon.png */; };
 		CD028CEE154FC361003A663A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE7154FC361003A663A /* Icon@2x.png */; };
 		CD028CEF154FC361003A663A /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE8154FC361003A663A /* iTunesArtwork */; };
+		CDAC297B15560B1900EBCA9D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAC297A15560B1900EBCA9D /* QuartzCore.framework */; };
 		CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47B8154E6E35006C7DAC /* UIKit.framework */; };
 		CDAD47BB154E6E35006C7DAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47BA154E6E35006C7DAC /* Foundation.framework */; };
 		CDAD47BD154E6E35006C7DAC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47BC154E6E35006C7DAC /* CoreGraphics.framework */; };
@@ -41,6 +42,7 @@
 		CDAD481D154E7B5D006C7DAC /* TableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAD480E154E7B5D006C7DAC /* TableCellGradient.png */; };
 		CDAD481F154E7B87006C7DAC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */; };
 		CDAD4822154E809D006C7DAC /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD4821154E809D006C7DAC /* SearchResultCell.m */; };
+		CDD347721555E90900D003D9 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD347711555E90900D003D9 /* GradientView.m */; };
 		CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF84BE215511BB200071471 /* LoadingCell.xib */; };
 		CDF84BFC1551219F00071471 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BE71551219F00071471 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-unused"; }; };
 		CDF84BFD1551219F00071471 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BE91551219F00071471 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -67,6 +69,7 @@
 		CD028CE6154FC361003A663A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		CD028CE7154FC361003A663A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		CD028CE8154FC361003A663A /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		CDAC297A15560B1900EBCA9D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CDAD47B4154E6E35006C7DAC /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAD47B8154E6E35006C7DAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDAD47BA154E6E35006C7DAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +103,8 @@
 		CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		CDAD4820154E809D006C7DAC /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		CDAD4821154E809D006C7DAC /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		CDD347701555E90900D003D9 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		CDD347711555E90900D003D9 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		CDF84BE215511BB200071471 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		CDF84BE61551219F00071471 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		CDF84BE71551219F00071471 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDAC297B15560B1900EBCA9D /* QuartzCore.framework in Frameworks */,
 				CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */,
 				CDAD47BB154E6E35006C7DAC /* Foundation.framework in Frameworks */,
 				CDAD47BD154E6E35006C7DAC /* CoreGraphics.framework in Frameworks */,
@@ -161,6 +167,9 @@
 		CDAD47A9154E6E35006C7DAC = {
 			isa = PBXGroup;
 			children = (
+				CDAC297A15560B1900EBCA9D /* QuartzCore.framework */,
+				CDD347701555E90900D003D9 /* GradientView.h */,
+				CDD347711555E90900D003D9 /* GradientView.m */,
 				CDFA0D011555BF7000756A55 /* Launch Images */,
 				CDF84BE51551219F00071471 /* AFNetworking */,
 				CD028CE1154FC361003A663A /* Icon */,
@@ -389,6 +398,7 @@
 				CDF84C041551219F00071471 /* AFXMLRequestOperation.m in Sources */,
 				CDF84C051551219F00071471 /* UIImageView+AFNetworking.m in Sources */,
 				CDFA0D121555CD9600756A55 /* DetailViewController.m in Sources */,
+				CDD347721555E90900D003D9 /* GradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

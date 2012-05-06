@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSString *artistName;
 
 -(NSComparisonResult)compareName:(SearchResult *)other;
+-(NSString *)kindForDisplay;
 
 @end
