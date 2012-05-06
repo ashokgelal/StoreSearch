@@ -3,8 +3,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "GradientView.h"
 
-@interface DetailViewController ()
-{
+@interface DetailViewController () {
     GradientView *gradientView;
 }
 
@@ -16,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *storeButton;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 - (IBAction)openInStore:(id)sender;
 -(IBAction)close:(id)sender;
 @end
@@ -29,6 +29,7 @@
 @synthesize priceLabel = _priceLabel;
 @synthesize storeButton = _storeButton;
 @synthesize backgroundView = _backgroundView;
+@synthesize closeButton = _closeButton;
 
 @synthesize searchResult = _searchResult;
 
@@ -74,7 +75,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 - (IBAction)openInStore:(id)sender {
@@ -96,11 +97,11 @@
         self.view.frame = rect;
         gradientView.alpha = 0.0f;
     }
-     completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
-        [gradientView removeFromSuperview];
-        [self removeFromParentViewController];
-     }];
+                     completion:^(BOOL finished) {
+                         [self.view removeFromSuperview];
+                         [gradientView removeFromSuperview];
+                         [self removeFromParentViewController];
+                     }];
 }
 
 -(void)presentInParentViewController:(UIViewController *)parentViewController
@@ -108,6 +109,8 @@
     gradientView = [[GradientView alloc] initWithFrame:parentViewController.view.bounds];
     [parentViewController.view addSubview:gradientView];
     
+    self.view.frame = parentViewController.view.bounds;
+    [self layoutForInterfaceOrientation:parentViewController.interfaceOrientation];
     [parentViewController.view addSubview:self.view];
     [parentViewController addChildViewController:self];
     
@@ -116,18 +119,18 @@
     bounceAnimation.delegate = self;
     
     bounceAnimation.values = [NSArray arrayWithObjects:
-                                      [NSNumber numberWithFloat:0.7f],
-                                      [NSNumber numberWithFloat:1.2f],
-                                      [NSNumber numberWithFloat:0.9f],
-                                      [NSNumber numberWithFloat:1.0f],
+                              [NSNumber numberWithFloat:0.7f],
+                              [NSNumber numberWithFloat:1.2f],
+                              [NSNumber numberWithFloat:0.9f],
+                              [NSNumber numberWithFloat:1.0f],
                               nil];
     
     bounceAnimation.keyTimes = [NSArray arrayWithObjects:
-                                      [NSNumber numberWithFloat:0.0f],
-                                      [NSNumber numberWithFloat:0.334f],
-                                      [NSNumber numberWithFloat:0.666f],
-                                      [NSNumber numberWithFloat:1.0f],
-                              nil];
+                                [NSNumber numberWithFloat:0.0f],
+                                [NSNumber numberWithFloat:0.334f],
+                                [NSNumber numberWithFloat:0.666f],
+                                [NSNumber numberWithFloat:1.0f],
+                                nil];
     
     bounceAnimation.timingFunctions = [NSArray arrayWithObjects:
                                        [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
@@ -135,7 +138,7 @@
                                        [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
                                        [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
                                        nil];
-                                                          
+    
     
     [self.view.layer addAnimation:bounceAnimation forKey:@"bounceAnimation"];
     
@@ -151,4 +154,21 @@
     [self didMoveToParentViewController:self.parentViewController];
 }
 
+-(void)layoutForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    CGRect rect = self.closeButton.frame;
+    if(UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+        rect.origin = CGPointMake(28, 87);
+    }
+    else {
+        rect.origin = CGPointMake(108, 7);
+    }
+    self.closeButton.frame = rect;
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self layoutForInterfaceOrientation:toInterfaceOrientation];
+}
 @end

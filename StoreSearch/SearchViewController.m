@@ -64,7 +64,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;
 }
 
 #pragma mark - UITableViewDataSource

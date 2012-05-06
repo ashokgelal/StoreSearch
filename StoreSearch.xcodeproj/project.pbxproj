@@ -103,8 +103,8 @@
 		CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		CDAD4820154E809D006C7DAC /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		CDAD4821154E809D006C7DAC /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
-		CDD347701555E90900D003D9 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
-		CDD347711555E90900D003D9 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		CDD347701555E90900D003D9 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = ../GradientView.h; sourceTree = "<group>"; };
+		CDD347711555E90900D003D9 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientView.m; path = ../GradientView.m; sourceTree = "<group>"; };
 		CDF84BE215511BB200071471 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		CDF84BE61551219F00071471 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		CDF84BE71551219F00071471 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -167,9 +167,6 @@
 		CDAD47A9154E6E35006C7DAC = {
 			isa = PBXGroup;
 			children = (
-				CDAC297A15560B1900EBCA9D /* QuartzCore.framework */,
-				CDD347701555E90900D003D9 /* GradientView.h */,
-				CDD347711555E90900D003D9 /* GradientView.m */,
 				CDFA0D011555BF7000756A55 /* Launch Images */,
 				CDF84BE51551219F00071471 /* AFNetworking */,
 				CD028CE1154FC361003A663A /* Icon */,
@@ -191,6 +188,7 @@
 		CDAD47B7154E6E35006C7DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDAC297A15560B1900EBCA9D /* QuartzCore.framework */,
 				CDAD47B8154E6E35006C7DAC /* UIKit.framework */,
 				CDAD47BA154E6E35006C7DAC /* Foundation.framework */,
 				CDAD47BC154E6E35006C7DAC /* CoreGraphics.framework */,
@@ -201,6 +199,8 @@
 		CDAD47BE154E6E35006C7DAC /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				CDD347701555E90900D003D9 /* GradientView.h */,
+				CDD347711555E90900D003D9 /* GradientView.m */,
 				CDAD47C7154E6E35006C7DAC /* AppDelegate.h */,
 				CDAD47C8154E6E35006C7DAC /* AppDelegate.m */,
 				CDAD47CA154E6E35006C7DAC /* SearchViewController.h */,
