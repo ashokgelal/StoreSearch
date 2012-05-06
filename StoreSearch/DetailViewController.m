@@ -2,6 +2,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+AFNetworking.h"
 #import "GradientView.h"
+#import "MenuViewController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface DetailViewController () {
     GradientView *gradientView;
@@ -17,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, strong) UIPopoverController *masterPopoverController;
+@property (nonatomic, strong) UIPopoverController *menuPopoverController;
 
 - (IBAction)openInStore:(id)sender;
 -(IBAction)close:(id)sender;
@@ -35,6 +38,7 @@
 
 @synthesize searchResult = _searchResult;
 @synthesize masterPopoverController = _masterPopoverController;
+@synthesize menuPopoverController = _menuPopoverController;
 
 -(void)dealloc
 {
@@ -54,13 +58,25 @@
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
-        self.closeButton.hidden = YES;
         self.backgroundView.hidden = (self.searchResult == nil);
         self.title = [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:@"CFBundleDisplayName"];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(menuButtonPressed:)];
     }
     
     if(self.searchResult != nil){
         [self updateUI];
+    }
+}
+
+-(void)menuButtonPressed:(UIBarButtonItem *)sender
+{
+    if([self.masterPopoverController isPopoverVisible]){
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
+    if([self.menuPopoverController isPopoverVisible]){
+        [self.menuPopoverController dismissPopoverAnimated:YES];
+    } else {
+        [self.menuPopoverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 }
 
@@ -224,5 +240,41 @@
         self.backgroundView.hidden = NO;
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }
+}
+
+-(UIPopoverController *)menuPopoverController{
+    if(_menuPopoverController == nil){
+        MenuViewController *menuViewController = [[MenuViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        menuViewController.detailViewController = self;
+        _menuPopoverController = [[UIPopoverController alloc] initWithContentViewController:menuViewController];
+    }
+    return _menuPopoverController;
+}
+
+-(void)splitViewController:(UISplitViewController *)svc popoverController:(UIPopoverController *)pc willPresentViewController:(UIViewController *)aViewController
+{
+    if([self.menuPopoverController isPopoverVisible]){
+        [self.menuPopoverController dismissPopoverAnimated:YES];
+    }
+}
+
+-(void)sendSupportEmail
+{
+    [self.menuPopoverController dismissPopoverAnimated:YES];
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    
+    if(picker != nil){
+        [picker setSubject:NSLocalizedString(@"Support Request", @"Email subject")];
+        [picker setToRecipients:[NSArray arrayWithObject:@"ashokgelal@gmail.com"]];
+        picker.mailComposeDelegate = self;
+        picker.modalPresentationStyle = UIModalPresentationFormSheet;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

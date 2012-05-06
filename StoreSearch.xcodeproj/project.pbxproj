@@ -20,6 +20,11 @@
 		CD159B49155645F7007ED636 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD159B4B155645F7007ED636 /* LoadingCell.xib */; };
 		CD159B4D15564602007ED636 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD159B4F15564602007ED636 /* DetailViewController.xib */; };
 		CD159B5315564CF9007ED636 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD159B5115564CF9007ED636 /* Localizable.strings */; };
+		CD159B75155660AD007ED636 /* DetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD159B73155660AD007ED636 /* DetailViewController~ipad.xib */; };
+		CD159B7D155663A7007ED636 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD159B7C155663A7007ED636 /* MenuViewController.m */; };
+		CD159B7F1556679B007ED636 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD159B7E1556679B007ED636 /* MessageUI.framework */; };
+		CD159B83155669BA007ED636 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = CD159B81155669BA007ED636 /* Default-Landscape~ipad.png */; };
+		CD159B84155669BA007ED636 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = CD159B82155669BA007ED636 /* Default-Portrait~ipad.png */; };
 		CD4C39C41556197300E91563 /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4C39C21556197300E91563 /* LandscapeViewController.m */; };
 		CDAC297B15560B1900EBCA9D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAC297A15560B1900EBCA9D /* QuartzCore.framework */; };
 		CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47B8154E6E35006C7DAC /* UIKit.framework */; };
@@ -84,6 +89,13 @@
 		CD159B5215564CF9007ED636 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD159B5415564D2F007ED636 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD159B5515564F73007ED636 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD159B74155660AD007ED636 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/DetailViewController~ipad.xib"; sourceTree = "<group>"; };
+		CD159B77155662FF007ED636 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = "nl.lproj/DetailViewController~ipad.xib"; sourceTree = "<group>"; };
+		CD159B7B155663A7007ED636 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		CD159B7C155663A7007ED636 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		CD159B7E1556679B007ED636 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CD159B81155669BA007ED636 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		CD159B82155669BA007ED636 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		CD4C39C11556197300E91563 /* LandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeViewController.h; sourceTree = "<group>"; };
 		CD4C39C21556197300E91563 /* LandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeViewController.m; sourceTree = "<group>"; };
 		CDAC297A15560B1900EBCA9D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -156,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD159B7F1556679B007ED636 /* MessageUI.framework in Frameworks */,
 				CDAC297B15560B1900EBCA9D /* QuartzCore.framework in Frameworks */,
 				CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */,
 				CDAD47BB154E6E35006C7DAC /* Foundation.framework in Frameworks */,
@@ -180,9 +193,19 @@
 			path = Icon;
 			sourceTree = "<group>";
 		};
+		CD159B80155669BA007ED636 /* Launch Images iPad */ = {
+			isa = PBXGroup;
+			children = (
+				CD159B81155669BA007ED636 /* Default-Landscape~ipad.png */,
+				CD159B82155669BA007ED636 /* Default-Portrait~ipad.png */,
+			);
+			path = "Launch Images iPad";
+			sourceTree = "<group>";
+		};
 		CDAD47A9154E6E35006C7DAC = {
 			isa = PBXGroup;
 			children = (
+				CD159B80155669BA007ED636 /* Launch Images iPad */,
 				CDFA0D011555BF7000756A55 /* Launch Images */,
 				CDF84BE51551219F00071471 /* AFNetworking */,
 				CD028CE1154FC361003A663A /* Icon */,
@@ -204,6 +227,7 @@
 		CDAD47B7154E6E35006C7DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD159B7E1556679B007ED636 /* MessageUI.framework */,
 				CDAC297A15560B1900EBCA9D /* QuartzCore.framework */,
 				CDAD47B8154E6E35006C7DAC /* UIKit.framework */,
 				CDAD47BA154E6E35006C7DAC /* Foundation.framework */,
@@ -215,6 +239,7 @@
 		CDAD47BE154E6E35006C7DAC /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				CD159B73155660AD007ED636 /* DetailViewController~ipad.xib */,
 				CDD347701555E90900D003D9 /* GradientView.h */,
 				CDD347711555E90900D003D9 /* GradientView.m */,
 				CDAD47C7154E6E35006C7DAC /* AppDelegate.h */,
@@ -238,6 +263,8 @@
 				CD159B48155645F3007ED636 /* LandscapeViewController.xib */,
 				CDDBE87515563386007B59F8 /* Search.h */,
 				CDDBE87615563386007B59F8 /* Search.m */,
+				CD159B7B155663A7007ED636 /* MenuViewController.h */,
+				CD159B7C155663A7007ED636 /* MenuViewController.m */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -398,6 +425,9 @@
 				CD159B4D15564602007ED636 /* DetailViewController.xib in Resources */,
 				CD159B46155645F3007ED636 /* LandscapeViewController.xib in Resources */,
 				CD159B5315564CF9007ED636 /* Localizable.strings in Resources */,
+				CD159B75155660AD007ED636 /* DetailViewController~ipad.xib in Resources */,
+				CD159B83155669BA007ED636 /* Default-Landscape~ipad.png in Resources */,
+				CD159B84155669BA007ED636 /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +457,7 @@
 				CDD347721555E90900D003D9 /* GradientView.m in Sources */,
 				CD4C39C41556197300E91563 /* LandscapeViewController.m in Sources */,
 				CDDBE87715563386007B59F8 /* Search.m in Sources */,
+				CD159B7D155663A7007ED636 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +514,15 @@
 				CD159B5415564D2F007ED636 /* nl */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CD159B73155660AD007ED636 /* DetailViewController~ipad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD159B74155660AD007ED636 /* en */,
+				CD159B77155662FF007ED636 /* nl */,
+			);
+			name = "DetailViewController~ipad.xib";
 			sourceTree = "<group>";
 		};
 		CDAD47C1154E6E35006C7DAC /* InfoPlist.strings */ = {
