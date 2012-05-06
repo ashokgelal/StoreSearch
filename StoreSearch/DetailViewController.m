@@ -84,17 +84,23 @@
 
 -(IBAction)close:(id)sender
 {
-    [self dismissFromParentViewController];
+    [self dismissFromParentViewControllerWithAnimationType:DetailViewControllerAnimationTypeSlide];
 }
 
--(void)dismissFromParentViewController
+-(void)dismissFromParentViewControllerWithAnimationType:(DetailViewControllerAnimationType)animationType;
 {
     [self willMoveToParentViewController:nil];
     
     [UIView animateWithDuration:0.4 animations:^{
-        CGRect rect = self.view.bounds;
-        rect.origin.y += rect.size.height;
-        self.view.frame = rect;
+        
+        if(animationType == DetailViewControllerAnimationTypeSlide){
+            CGRect rect = self.view.bounds;
+            rect.origin.y += rect.size.height;
+            self.view.frame = rect;
+        }
+        else {
+            self.view.alpha = 0.0f;
+        }
         gradientView.alpha = 0.0f;
     }
                      completion:^(BOOL finished) {

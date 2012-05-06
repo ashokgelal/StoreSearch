@@ -15,6 +15,8 @@
 		CD028CED154FC361003A663A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE6154FC361003A663A /* Icon.png */; };
 		CD028CEE154FC361003A663A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE7154FC361003A663A /* Icon@2x.png */; };
 		CD028CEF154FC361003A663A /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = CD028CE8154FC361003A663A /* iTunesArtwork */; };
+		CD4C39C41556197300E91563 /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4C39C21556197300E91563 /* LandscapeViewController.m */; };
+		CD4C39C51556197300E91563 /* LandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4C39C31556197300E91563 /* LandscapeViewController.xib */; };
 		CDAC297B15560B1900EBCA9D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAC297A15560B1900EBCA9D /* QuartzCore.framework */; };
 		CDAD47B9154E6E35006C7DAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47B8154E6E35006C7DAC /* UIKit.framework */; };
 		CDAD47BB154E6E35006C7DAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD47BA154E6E35006C7DAC /* Foundation.framework */; };
@@ -69,6 +71,9 @@
 		CD028CE6154FC361003A663A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		CD028CE7154FC361003A663A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		CD028CE8154FC361003A663A /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		CD4C39C11556197300E91563 /* LandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeViewController.h; sourceTree = "<group>"; };
+		CD4C39C21556197300E91563 /* LandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeViewController.m; sourceTree = "<group>"; };
+		CD4C39C31556197300E91563 /* LandscapeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandscapeViewController.xib; sourceTree = "<group>"; };
 		CDAC297A15560B1900EBCA9D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CDAD47B4154E6E35006C7DAC /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAD47B8154E6E35006C7DAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -217,6 +222,9 @@
 				CDFA0D0F1555CD9600756A55 /* DetailViewController.h */,
 				CDFA0D101555CD9600756A55 /* DetailViewController.m */,
 				CDFA0D111555CD9600756A55 /* DetailViewController.xib */,
+				CD4C39C11556197300E91563 /* LandscapeViewController.h */,
+				CD4C39C21556197300E91563 /* LandscapeViewController.m */,
+				CD4C39C31556197300E91563 /* LandscapeViewController.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -372,6 +380,7 @@
 				CDFA0D041555BF7000756A55 /* Default.png in Resources */,
 				CDFA0D051555BF7000756A55 /* Default@2x.png in Resources */,
 				CDFA0D131555CD9600756A55 /* DetailViewController.xib in Resources */,
+				CD4C39C51556197300E91563 /* LandscapeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +408,7 @@
 				CDF84C051551219F00071471 /* UIImageView+AFNetworking.m in Sources */,
 				CDFA0D121555CD9600756A55 /* DetailViewController.m in Sources */,
 				CDD347721555E90900D003D9 /* GradientView.m in Sources */,
+				CD4C39C41556197300E91563 /* LandscapeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
