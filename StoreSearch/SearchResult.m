@@ -19,25 +19,25 @@
 -(NSString *)kindForDisplay
 {
     if([self.kind isEqualToString:@"album"]){
-        return @"Album";
+        return NSLocalizedString(@"Album", @"Localized kind: Album");
     }else if ([self.kind isEqualToString:@"audiobook"]) {
-        return @"Audiobook";
+        return NSLocalizedString(@"Audiobook", @"Localized kind: Audiobook");
     }else if ([self.kind isEqualToString:@"book"]) {
-        return @"Book";
+        return NSLocalizedString(@"Book", @"Localized kind: Book");
     }else if ([self.kind isEqualToString:@"ebook"]) {
-        return @"E-Book";
+        return NSLocalizedString(@"E-Book", @"Localized kind: E-Book");
     }else if ([self.kind isEqualToString:@"feature-movie"]) {
-        return @"Movie";
+        return NSLocalizedString(@"Movie", @"Localized kind: Movie");
     }else if ([self.kind isEqualToString:@"music-video"]) {
-        return @"Music Video";
+        return NSLocalizedString(@"Music Video", @"Localized kind: Music Video");
     }else if ([self.kind isEqualToString:@"podcast"]) {
-        return @"Podcast";
+        return NSLocalizedString(@"Podcast", @"Localized kind: Podcast");
     }else if ([self.kind isEqualToString:@"software"]) {
-        return @"App";
+        return NSLocalizedString(@"App", @"Localized kind: App");
     }else if ([self.kind isEqualToString:@"song"]) {
-        return @"Song";
+        return NSLocalizedString(@"Song", @"Localized kind: Song");
     }else if ([self.kind isEqualToString:@"tv-episode"]) {
-        return @"TV Episode";
+        return NSLocalizedString(@"TV Episode", @"Localized kind: TV Episode");
     }else{
         return self.kind;
     }
