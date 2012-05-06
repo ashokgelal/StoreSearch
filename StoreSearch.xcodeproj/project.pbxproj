@@ -45,6 +45,7 @@
 		CDAD481F154E7B87006C7DAC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAD481E154E7B87006C7DAC /* SearchResultCell.xib */; };
 		CDAD4822154E809D006C7DAC /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD4821154E809D006C7DAC /* SearchResultCell.m */; };
 		CDD347721555E90900D003D9 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD347711555E90900D003D9 /* GradientView.m */; };
+		CDDBE87715563386007B59F8 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDBE87615563386007B59F8 /* Search.m */; };
 		CDF84BE315511BB200071471 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF84BE215511BB200071471 /* LoadingCell.xib */; };
 		CDF84BFC1551219F00071471 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BE71551219F00071471 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-unused"; }; };
 		CDF84BFD1551219F00071471 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF84BE91551219F00071471 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -110,6 +111,8 @@
 		CDAD4821154E809D006C7DAC /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		CDD347701555E90900D003D9 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = ../GradientView.h; sourceTree = "<group>"; };
 		CDD347711555E90900D003D9 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientView.m; path = ../GradientView.m; sourceTree = "<group>"; };
+		CDDBE87515563386007B59F8 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		CDDBE87615563386007B59F8 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
 		CDF84BE215511BB200071471 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		CDF84BE61551219F00071471 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		CDF84BE71551219F00071471 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				CD4C39C11556197300E91563 /* LandscapeViewController.h */,
 				CD4C39C21556197300E91563 /* LandscapeViewController.m */,
 				CD4C39C31556197300E91563 /* LandscapeViewController.xib */,
+				CDDBE87515563386007B59F8 /* Search.h */,
+				CDDBE87615563386007B59F8 /* Search.m */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				CDFA0D121555CD9600756A55 /* DetailViewController.m in Sources */,
 				CDD347721555E90900D003D9 /* GradientView.m in Sources */,
 				CD4C39C41556197300E91563 /* LandscapeViewController.m in Sources */,
+				CDDBE87715563386007B59F8 /* Search.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
